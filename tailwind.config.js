@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        violetaClub: '#9205cb',
-        violetaFondo: '#5f0683',
+        violetaClub: '#762b8d',
+        violetaFondo: '#53107c',
       },
       fontFamily: {
         slab: ['"Alfa Slab One"', 'serif'], // Asegúrate de usar comillas dobles para nombres de fuentes con espacios

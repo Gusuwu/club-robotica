@@ -22,11 +22,11 @@
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    background-color: #320683; /* Color de hover */
+    background-color: #53107c; /* Color de hover */
 }
 
 .swiper-pagination-bullet-active {
-    background-color: #ebd608 !important;
+    background-color: #fff624 !important;
 }
 
 .m-h-35 {
@@ -44,17 +44,153 @@
 }
 
 .text-gold {
-    color:#ebd608;
+    color:#fff624;
 }
 
 .text-violeta {
-    color:#9205cb;
+    color:#762b8d;
 }
 
 .bg-gold {
-    background-color: #ebd608;
+    background-color: #fff624;
 }
 
 .bg-violeta{
-    background-color: #9205cb;
+    background-color: #762b8d;
+}
+
+.bg-rojo{
+    background-color: rgba(238, 22, 22, 0.863);
+}
+
+.bg-verde{
+    background-color: rgba(17, 139, 17, 0.918);
+}
+
+.bg-azul{
+    background-color: rgb(56, 56, 245);
+}
+
+.btn {
+    position: relative;
+    overflow: hidden;
+    color: #fff624; /* Color inicial del texto */
+    background-color: #762b8d; /* Fondo base del botón */
+    border: none; /* Asegúrate de que no haya borde */
+    padding: 0.75rem 1.5rem;
+    border-radius: 2.5rem;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: -1px; /* Ajuste para evitar huecos superiores */
+    left: -101%; /* Empieza ligeramente más a la izquierda */
+    width: calc(100% + 1px); /* Extiende un poco más el ancho */
+    height: calc(100% + 1px); /* Extiende un poco más la altura */
+    background: linear-gradient(to right, #53107c, #53107c);
+    transition: left 0.2s ease-in-out; /* Velocidad y suavidad de la animación */
+    z-index: 0; /* Debajo del texto */
+    border-radius: inherit; /* Hereda el borde redondeado del botón */
+}
+
+.btn:hover::before {
+    left: 0; /* Mueve el efecto hacia la vista */
+}
+
+.btn span {
+    position: relative;
+    z-index: 1; /* Asegura que el texto esté encima del efecto */
+}
+
+.btn-gold {
+    position: relative;
+    overflow: hidden;
+    color: #762b8d; /* Color inicial del texto */
+    background-color: #fff624 ; /* Fondo base del botón */
+    border: none; /* Asegúrate de que no haya borde */
+    padding: 0.75rem 1.5rem;
+    border-radius: 2.5rem;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.btn-gold::before {
+    content: '';
+    position: absolute;
+    top: -1px; /* Ajuste para evitar huecos superiores */
+    left: -101%; /* Empieza ligeramente más a la izquierda */
+    width: calc(100% + 1px); /* Extiende un poco más el ancho */
+    height: calc(100% + 1px); /* Extiende un poco más la altura */
+    background: linear-gradient(to right, #b6b120, #b6b120);
+    transition: left 0.2s ease-in-out; /* Velocidad y suavidad de la animación */
+    z-index: 0; /* Debajo del texto */
+    border-radius: inherit; /* Hereda el borde redondeado del botón */
+}
+
+.btn-gold:hover::before {
+    left: 0; /* Mueve el efecto hacia la vista */
+}
+
+.btn-gold span {
+    position: relative;
+    z-index: 1; /* Asegura que el texto esté encima del efecto */
+}
+
+.card {
+    display: flex;
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+    gap: 1rem; /* Espaciado entre la imagen y el contenido */
+}
+
+img {
+    width: 33.333%; /* O puedes usar w-1/3 en Tailwind */
+    height: auto; /* Asegura que la imagen mantenga su proporción */
+    object-fit: cover; /* Asegura que la imagen se recorte adecuadamente */
+    border-radius: 0.5rem; /* Bordes redondeados */
+}
+
+.card .flex-1 {
+    display: flex;
+    flex-direction: column; /* Orienta los elementos de arriba hacia abajo */
+    justify-content: space-between; /* Espacia los elementos uniformemente */
+}
+
+.h-16{
+    height: 16rem;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.curso-imagen {
+    height: auto;
+    object-fit: cover; /* Hace que la imagen se ajuste a su contenedor */
+    transition: transform 0.2s ease-out; /* Animación de suavizado */
+    transform-style: preserve-3d; /* Mantiene la perspectiva 3D solo en la imagen */
+    will-change: transform; /* Optimiza la animación para la imagen */
+}
+
+.card:hover .curso-imagen {
+    transform: scale(1.05); /* Aumenta un poco el tamaño de la imagen cuando la card se activa */
+}
+
+.card:hover {
+    /* Aquí quitamos el efecto de rotación 3D para toda la card */
+    transform: none;
+}
+
+.flex-end{
+    display: flex;
+    justify-content: flex-end;
+}
+  
+.flex-start{
+    display: flex;
+    justify-content: flex-start;
 }
