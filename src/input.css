@@ -60,15 +60,15 @@
 }
 
 .bg-rojo{
-    background-color: rgba(238, 22, 22, 0.863);
+    background-color: rgba(224, 83, 83, 0.863);
 }
 
 .bg-verde{
-    background-color: rgba(17, 139, 17, 0.918);
+    background-color: rgba(90, 226, 90, 0.918);
 }
 
 .bg-azul{
-    background-color: rgb(56, 56, 245);
+    background-color: rgb(91, 91, 226);
 }
 
 .btn {
@@ -150,6 +150,10 @@ img {
     height: auto; /* Asegura que la imagen mantenga su proporción */
     object-fit: cover; /* Asegura que la imagen se recorte adecuadamente */
     border-radius: 0.5rem; /* Bordes redondeados */
+}
+
+.galeria{
+    width: 19% !important;
 }
 
 .card .flex-1 {

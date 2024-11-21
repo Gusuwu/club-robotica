@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./dist/output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <title>Club de Robótica del Chaco</title>
 </head>
 <body>
@@ -96,7 +98,7 @@
             <!-- Cards Container -->
             <div class="grid grid-cols-1 gap-8">
                 <!-- Card 1 -->
-                <div class="card flex items-center bg-rojo rounded-lg shadow-xl p-6">
+                <div class="card flex items-center bg-rojo rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg shadow-xl p-6">
                     <img src="./img/robotica.png" alt="Curso 1" class="curso-imagen max-w-[200px] h-auto object-contain rounded-lg mr-4">
                     <div class="flex flex-col justify-between flex-1">
                         <h1 class="text-xl text-white font-slab mb-2" style="font-size: 35px;">Robótica Educativa</h1>
@@ -110,7 +112,7 @@
                         </div>
                     </div>
                 </div>                
-                <div class="card flex items-center bg-verde rounded-lg shadow-xl p-6">
+                <div class="card flex items-center bg-verde rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg shadow-xl p-6">
                     <img src="./img/impresion.png" alt="Curso 2" class="curso-imagen max-w-[200px] h-auto object-contain rounded-lg mr-4">
                     <div class="flex flex-col justify-between flex-1">
                         <h3 class="text-xl text-white font-slab mb-2" style="font-size: 35px;">Diseño e Impresión 3D</h3>
@@ -126,7 +128,7 @@
                 </div>
     
                 <!-- Card 3 -->
-                <div class="card flex items-center bg-azul rounded-lg shadow-xl p-6">
+                <div class="card flex items-center bg-azul rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg shadow-xl p-6">
                     <img src="./img/juego.png" alt="Curso 3" class="curso-imagen max-w-[200px] h-auto object-contain rounded-lg mr-4">
                     <div class="flex flex-col justify-between flex-1">
                         <h3 class="text-xl font-slab text-white mb-2" style="font-size: 35px;">Desarrollo de Videojuegos</h3>
@@ -143,32 +145,160 @@
             </div>
         </div>
     </section>
-    
-          
 
-    <section id="galeria" class="bg-violetaFondo relative overflow-hidden" style="padding-top: 50px; padding-bottom: 50px; min-height: 800px;">
-        <div class="container mx-auto">
-            <h2 class="text-4xl text-center text-gold font-slab mb-8">Galería</h2>
-            <div class="swiper-container">
+    <section id="galeria" class="bg-violetaFondo py-8 flex flex-col items-center overflow-x-hidden">
+        <div class="container mx-auto w-full">
+            <h2 class="text-4xl text-center text-gold font-slab mb-8">Galeria</h2>
+            <!-- Imagen principal -->
+            <div class="mb-4 flex justify-center">
+                <img id="imagen-principal" 
+                     class="w-full max-w-4xl rounded-lg object-cover" 
+                     style="width: 100%; max-width: 700px; height: 400px; object-fit: cover;" 
+                     src="./img/galeria1.jpg" 
+                     alt="Imagen principal">
+            </div>
+            <!-- Galería de imágenes pequeñas con slider -->
+            <div class="swiper-container w-full max-w-4xl overflow-hidden relative">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide centrado">
-                        <img src="./img/image1.png" alt="Imagen 1" class="w-full m-h-35 object-cover">
+                    <!-- Imagenes pequeñas con animación hover y selección -->
+                    <div class="swiper-slide">
+                        <img class="w-40 h-40 rounded-lg object-cover mini-imagen transition-transform transform hover:scale-105 hover:shadow-lg hover:border-transparent select-none" 
+                             style="width: 100% !important;" 
+                             src="./img/galeria1.jpg" alt="Imagen 1" onclick="seleccionarImagen(this)">
                     </div>
-                    <div class="swiper-slide centrado">
-                        <img src="./img/image2.webp" alt="Imagen 2" class="w-full m-h-35 object-cover">
+                    <div class="swiper-slide">
+                        <img class="w-40 h-40 rounded-lg object-cover mini-imagen transition-transform transform hover:scale-105 hover:shadow-lg hover:border-transparent select-none" 
+                             style="width: 100% !important;" 
+                             src="./img/galeria2.jpg" alt="Imagen 2" onclick="seleccionarImagen(this)">
                     </div>
-                    <!-- Agrega más imágenes según sea necesario -->
+                    <div class="swiper-slide">
+                        <img class="w-40 h-40 rounded-lg object-cover mini-imagen transition-transform transform hover:scale-105 hover:shadow-lg hover:border-transparent select-none" 
+                             style="width: 100% !important;" 
+                             src="./img/galeria3.png" alt="Imagen 3" onclick="seleccionarImagen(this)">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="w-40 h-40 rounded-lg object-cover mini-imagen transition-transform transform hover:scale-105 hover:shadow-lg hover:border-transparent select-none" 
+                             style="width: 100% !important;" 
+                             src="./img/galeria4.png" alt="Imagen 4" onclick="seleccionarImagen(this)">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="w-40 h-40 rounded-lg object-cover mini-imagen transition-transform transform hover:scale-105 hover:shadow-lg hover:border-transparent select-none" 
+                             style="width: 100% !important;" 
+                             src="./img/galeria5.jpg" alt="Imagen 5" onclick="seleccionarImagen(this)">
+                    </div>
+                    <!-- Nuevas imágenes -->
+                    <div class="swiper-slide">
+                        <img class="w-40 h-40 rounded-lg object-cover mini-imagen transition-transform transform hover:scale-105 hover:shadow-lg hover:border-transparent select-none" 
+                             style="width: 100% !important;" 
+                             src="./img/galeria6.jpg" alt="Imagen 6" onclick="seleccionarImagen(this)">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="w-40 h-40 rounded-lg object-cover mini-imagen transition-transform transform hover:scale-105 hover:shadow-lg hover:border-transparent select-none" 
+                             style="width: 100% !important;" 
+                             src="./img/galeria7.jpg" alt="Imagen 7" onclick="seleccionarImagen(this)">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="w-40 h-40 rounded-lg object-cover mini-imagen transition-transform transform hover:scale-105 hover:shadow-lg hover:border-transparent select-none" 
+                             style="width: 100% !important;" 
+                             src="./img/galeria8.jpg" alt="Imagen 8" onclick="seleccionarImagen(this)">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="w-40 h-40 rounded-lg object-cover mini-imagen transition-transform transform hover:scale-105 hover:shadow-lg hover:border-transparent select-none" 
+                             style="width: 100% !important;" 
+                             src="./img/galeria1.jpg" alt="Imagen 9" onclick="seleccionarImagen(this)">
+                    </div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+                <!-- Controles del slider -->
+                <div class="swiper-button-prev absolute top-1/2 left-0 transform -translate-y-1/2 text-white"></div>
+                <div class="swiper-button-next absolute top-1/2 right-0 transform -translate-y-1/2 text-white"></div>
             </div>
         </div>
     </section>
+    
+      
 
-    <section id="eventos" class="h-screen bg-violetaFondo flex items-center justify-center">
-        <h1 class="text-4xl text-center">Eventos</h1>
+    <section id="eventos" class="py-16 bg-violetaFondo">
+        <div class="container mx-auto px-4">
+            <!-- Título de la sección -->
+            <h1 class="text-4xl text-center text-gold font-slab mb-12">Eventos</h1>
+    
+            <!-- Contenedor de las cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://via.placeholder.com/400x200" alt="Evento 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl font-slab text-violeta hover:text-violetaClaro">Evento 1</h2>
+                        <p class="text-gray-600 text-sm mt-2">
+                            <span class="font-bold">Ubicación:</span> Polo Tecnologico, Fontana <br>
+                            <span class="font-bold">Fecha:</span> 25 de Noviembre
+                        </p>
+                        <p class="text-gray-700 mt-4">
+                            Descripción breve del evento para captar el interés de los visitantes.
+                        </p>
+                        <button class="btn mt-4 w-full px-4 py-2 rounded">
+                            <span class="font-slab">Ver más</span> 
+                        </button>
+                    </div>
+                </div>
+    
+                <!-- Card 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://via.placeholder.com/400x200" alt="Evento 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl font-slab text-violeta hover:text-violetaClaro">Evento 2</h2>
+                        <p class="text-gray-600 text-sm mt-2">
+                            <span class="font-bold">Ubicación:</span> Parque 2 de Febrero, Resistencia<br>
+                            <span class="font-bold">Fecha:</span> 30 de Noviembre
+                        </p>
+                        <p class="text-gray-700 mt-4">
+                            Otra breve descripción para destacar los puntos más importantes del evento.
+                        </p>
+                        <button class="btn mt-4 w-full px-4 py-2 rounded">
+                            <span class="font-slab">Ver más</span> 
+                        </button>
+                    </div>
+                </div>
+    
+                <!-- Card 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://via.placeholder.com/400x200" alt="Evento 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl font-slab text-violeta hover:text-violetaClaro">Evento 3</h2>
+                        <p class="text-gray-600 text-sm mt-2">
+                            <span class="font-bold">Ubicación:</span> Polideportivo J. Zapata, Resistencia<br>
+                            <span class="font-bold">Fecha:</span> 5 de Diciembre
+                        </p>
+                        <p class="text-gray-700 mt-4">
+                            Breve descripción para animar a los interesados a asistir al evento.
+                        </p>
+                        <button class="btn mt-4 w-full px-4 py-2 rounded">
+                            <span class="font-slab">Ver más</span> 
+                        </button>
+                    </div>
+                </div>
+    
+                <!-- Card 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://via.placeholder.com/400x200" alt="Evento 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl font-slab text-violeta hover:text-violetaClaro">Evento 4</h2>
+                        <p class="text-gray-600 text-sm mt-2">
+                            <span class="font-bold">Ubicación:</span> UNNE, Resistencia<br>
+                            <span class="font-bold">Fecha:</span> 12 de Diciembre
+                        </p>
+                        <p class="text-gray-700 mt-4">
+                            Un último párrafo que resuma el evento y lo haga atractivo.
+                        </p>
+                        <button class="btn mt-4 w-full px-4 py-2 rounded">
+                            <span class="font-slab">Ver más</span> 
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+    
 
     <section id="nosotros" class="h-screen bg-violetaFondo flex items-center justify-center">
         <h1 class="text-4xl text-center">Sobre Nosotros</h1>
@@ -178,10 +308,10 @@
         <div class="container mx-auto">
             <h2 class="text-4xl text-center text-gold font-slab mb-8">Contáctanos</h2>
             
-            <div class="max-w-xl mx-auto bg-gold p-8 rounded-lg shadow-lg">
-                <form action="mailto:augustoerrobidarte@gmail.com" method="POST" enctype="text/plain">
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <form action="send_email.php" method="POST" enctype="text/plain">
                     <div class="mb-6">
-                        <label class="block text-gray-800 font-bold mb-2 text-lg" for="nombre">Nombre</label>
+                        <label class="block text-violeta font-bold mb-2 text-lg" for="nombre">Nombre</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 <svg class="w-6 h-6 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -195,7 +325,7 @@
                     </div>
 
                     <div class="mb-6">
-                        <label class="block text-gray-800 font-bold mb-2 text-lg" for="email">Email</label>
+                        <label class="block text-violeta font-bold mb-2 text-lg" for="email">Email</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 <svg class="w-5 h-5 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
@@ -211,7 +341,7 @@
                     
                     <!-- Mensaje -->
                     <div class="mb-6">
-                        <label class="block text-gray-800 font-bold mb-2 text-lg" for="mensaje">Mensaje</label>
+                        <label class="block text-violeta font-bold mb-2 text-lg" for="mensaje">Mensaje</label>
                         <textarea id="mensaje" name="mensaje" rows="5" 
                                   class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-[#9205cb] focus:ring-2 focus:ring-[#9205cb] transition duration-200"
                                   placeholder="Escribe tu mensaje aquí..." required></textarea>
@@ -242,22 +372,6 @@
     
             <!-- Ubicación y Horarios -->
             <div class="mt-12 text-center text-white">
-                <h3 class="text-2xl text-gold font-slab mb-2">Ubicación</h3>
-
-                <h5 class="text-2xl font-bold mb-2">Oficina</h5>
-                <div class="flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path fill-rule="evenodd" d="M11.906 1.994a8.002 8.002 0 0 1 8.09 8.421 7.996 7.996 0 0 1-1.297 3.957.996.996 0 0 1-.133.204l-.108.129c-.178.243-.37.477-.573.699l-5.112 6.224a1 1 0 0 1-1.545 0L5.982 15.26l-.002-.002a18.146 18.146 0 0 1-.309-.38l-.133-.163a.999.999 0 0 1-.13-.202 7.995 7.995 0 0 1 6.498-12.518ZM15 9.997a3 3 0 1 1-5.999 0 3 3 0 0 1 5.999 0Z" clip-rule="evenodd"/>
-                    </svg>
-                    <p>Don Bosco 42, Resistencia, Chaco</p>
-                </div>
-                <h5 class="text-2xl font-bold mb-2">Cecual</h5>
-                <div class="flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path fill-rule="evenodd" d="M11.906 1.994a8.002 8.002 0 0 1 8.09 8.421 7.996 7.996 0 0 1-1.297 3.957.996.996 0 0 1-.133.204l-.108.129c-.178.243-.37.477-.573.699l-5.112 6.224a1 1 0 0 1-1.545 0L5.982 15.26l-.002-.002a18.146 18.146 0 0 1-.309-.38l-.133-.163a.999.999 0 0 1-.13-.202 7.995 7.995 0 0 1 6.498-12.518ZM15 9.997a3 3 0 1 1-5.999 0 3 3 0 0 1 5.999 0Z" clip-rule="evenodd"/>
-                    </svg>
-                    <p>Santa María de Oro 471, Resistencia, Chaco</p>
-                </div>
                 
                 <h3 class="text-2xl text-gold font-slab mt-6 mb-2">Horarios de Atención</h3>
                 <div class="flex items-center justify-center mb-4">
@@ -276,19 +390,32 @@
                 </div>
             </div>
             
-    
-            <div class="mt-12 flex items-center gap-6">
-                <div class="w-full lg:w-1/2 text-center">
-                    <h3 class="text-2xl text-gold font-slab mb-4">Sede Oficina</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.642072977018!2d-58.98612552520552!3d-27.44926341583448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450cf6830e5a07%3A0x261981a1276e8647!2sC.%20Don%20Bosco%2042%2C%20H3500AHB%20Resistencia%2C%20Chaco!5e0!3m2!1ses-419!2sar!4v1730660451678!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            
-                <div class="w-full lg:w-1/2 text-center">
-                    <h3 class="text-2xl text-gold font-slab mb-4">Sede Cecual</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.489139327813!2d-58.99392922520529!3d-27.454027416037444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450c8c9a948c7d%3A0x525e207724a7fb44!2sCecual!5e0!3m2!1ses-419!2sar!4v1730660507337!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="mt-12 text-center text-white">
+                <h3 class="text-2xl text-gold font-slab">Ubicación</h3>
+                <div class="mt-6 flex items-center gap-6">
+                    <div class="w-full lg:w-1/2 text-center">
+                        <h3 class="text-2xl text-gold font-slab mb-4">Sede Oficina</h3>
+                        <div class="flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M11.906 1.994a8.002 8.002 0 0 1 8.09 8.421 7.996 7.996 0 0 1-1.297 3.957.996.996 0 0 1-.133.204l-.108.129c-.178.243-.37.477-.573.699l-5.112 6.224a1 1 0 0 1-1.545 0L5.982 15.26l-.002-.002a18.146 18.146 0 0 1-.309-.38l-.133-.163a.999.999 0 0 1-.13-.202 7.995 7.995 0 0 1 6.498-12.518ZM15 9.997a3 3 0 1 1-5.999 0 3 3 0 0 1 5.999 0Z" clip-rule="evenodd"/>
+                            </svg>
+                            <p class="text-white">Don Bosco 42, Resistencia, Chaco</p>
+                        </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.642072977018!2d-58.98612552520552!3d-27.44926341583448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450cf6830e5a07%3A0x261981a1276e8647!2sC.%20Don%20Bosco%2042%2C%20H3500AHB%20Resistencia%2C%20Chaco!5e0!3m2!1ses-419!2sar!4v1730660451678!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                
+                    <div class="w-full lg:w-1/2 text-center">
+                        <h3 class="text-2xl text-gold font-slab mb-4">Sede Cecual</h3>
+                        <div class="flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M11.906 1.994a8.002 8.002 0 0 1 8.09 8.421 7.996 7.996 0 0 1-1.297 3.957.996.996 0 0 1-.133.204l-.108.129c-.178.243-.37.477-.573.699l-5.112 6.224a1 1 0 0 1-1.545 0L5.982 15.26l-.002-.002a18.146 18.146 0 0 1-.309-.38l-.133-.163a.999.999 0 0 1-.13-.202 7.995 7.995 0 0 1 6.498-12.518ZM15 9.997a3 3 0 1 1-5.999 0 3 3 0 0 1 5.999 0Z" clip-rule="evenodd"/>
+                            </svg>
+                            <p class="text-white">Santa María de Oro 471, Resistencia, Chaco</p>
+                        </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.489139327813!2d-58.99392922520529!3d-27.454027416037444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450c8c9a948c7d%3A0x525e207724a7fb44!2sCecual!5e0!3m2!1ses-419!2sar!4v1730660507337!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
-            
         </div>
     </section>
     
@@ -307,20 +434,62 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1, // Cambia esto según tus necesidades (1, 2, etc.)
-            spaceBetween: 30,
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3, // Número de imágenes visibles
+            spaceBetween: 10, // Espacio entre imágenes
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next', // Botón para pasar a la siguiente imagen
+                prevEl: '.swiper-button-prev', // Botón para retroceder
             },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
+            breakpoints: {
+                // Configuración para pantallas más pequeñas
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 15,
+                },
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                },
             },
-            loop: true, // Hace que el carrusel se repita al final
         });
-    </script> 
+    </script>
+
+<script>
+    function seleccionarImagen(imagen) {
+        // Elimina la clase "seleccionado" de todas las imágenes pequeñas
+        const imagenes = document.querySelectorAll('.mini-imagen');
+        imagenes.forEach(img => {
+            img.classList.remove('border-yellow-500', 'border-4');
+        });
+        
+        // Agrega la clase "seleccionado" a la imagen clickeada
+        imagen.classList.add('border-yellow-500', 'border-4');
+        
+        // Actualiza la imagen principal
+        document.getElementById('imagen-principal').src = imagen.src;
+    }
+</script>
+    
+    <script>
+        // Seleccionar la imagen principal
+        const imagenPrincipal = document.getElementById("imagen-principal");
+    
+        // Seleccionar todas las imágenes pequeñas
+        const miniImagenes = document.querySelectorAll(".mini-imagen");
+    
+        // Agregar evento click a cada imagen pequeña
+        miniImagenes.forEach((imagen) => {
+            imagen.addEventListener("click", () => {
+                // Cambiar el src de la imagen principal al src de la miniatura
+                imagenPrincipal.src = imagen.src;
+            });
+        });
+    </script>
 
     <script>
         document.querySelectorAll('.curso-imagen').forEach(img => {
